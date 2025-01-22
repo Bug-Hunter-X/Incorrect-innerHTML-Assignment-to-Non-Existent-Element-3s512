@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text should be visible.
+  </div>
+
+  <script>
+    // Check if the element exists before modifying innerHTML
+    const element = document.getElementById('myDiv');
+    if (element) {
+      element.innerHTML = 'This will replace the existing text';
+    } else {
+      console.error("Element with id 'myDiv' not found!");
+    }
+
+    const nonExistentElement = document.getElementById('nonExistentElement');
+    if (!nonExistentElement) {
+        console.error("Element with id 'nonExistentElement' does not exist.");
+    } else {
+        nonExistentElement.innerHTML = "This text won't be shown";
+    }
+  </script>
+</body>
+</html>
